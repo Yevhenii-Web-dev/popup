@@ -28,8 +28,10 @@ function hide() {
 // slick slider
 $(function() {
     $('.left__slider').slick({
-        prevArrow: '<div class="icon-chevron-left"></div>',
-        nextArrow: '<div class="icon-chevron-right"></div>',
+        adaptiveHeight:true,
+        draggable:false,
+        touchThreshold:40,
+        touchMove:true,
     });
    
 });
