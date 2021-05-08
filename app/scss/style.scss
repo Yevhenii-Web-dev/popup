@@ -1,11 +1,276 @@
-html{
-    box-sizing: border-box;
+@import "vars";
+@import "global";
+@import "fonts";
+
+
+
+
+.popup__btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid red;
+    padding: 15px 10px;
+    cursor: pointer;
+
+
+
 }
-*,
-*::before,
-*::after{
-    box-sizing: inherit;
+
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.5s ease 0s;
+
+    &__body {
+        min-height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 10px;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+
+        position: relative;
+        background-color: #fff;
+        max-width: 745px;
+        width: 100%;
+        height: 355px;
+        padding: 20px;
+        transition: all 0.5s ease 0s;
+        opacity: 0;
+        transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+        
+    }
+
+    &__close {
+        position: absolute;
+        width: 17px;
+        height: 17px;
+        top: 20px;
+        right: 20px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        cursor: pointer;
+
+    }
+    
+    &__img {
+        // width: 230px;
+        // height: 166px;
+        // background-position: center;
+        // background-repeat: no-repeat;
+        // background-size: cover;
+    }
+
+    &__title {
+        max-width: 337px;
+        width: 100%;
+        position: relative;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 32px;
+    }
 }
-.box{
+
+
+.popup__left{
+    width: 230px;
+    height: auto;
+    max-width: 100%;
+    margin: 0 auto;
+
+}
+.left__slider{
+    margin-top: 20px;
+
+}
+.slick__list{
+    overflow: hidden;
+}
+.slick__track{
     display: flex;
+}
+// .slick-next:before, [dir=rtl] .slick-prev:before{
+//     content: "\f053";
+//     color: red;
+// }
+// .slick-next:before, .slick-prev:before{
+//     content: '\f053';
+//     font-family: 'icomoon';
+// }
+.icon-chevron-left{
+    font-family: 'icomoon';
+    content: "\f053";
+      
+}
+
+.form__label {
+    display: inline-block;
+    font-size: 12px;
+    margin-bottom: 21px;
+}
+
+.select__label {
+    display: inline-block;
+    font-size: 12px;
+    margin-bottom: 9px;
+}
+
+
+.form__checkboxes {
+    margin-bottom: 22px;
+
+    label {
+        margin-right: 15px;
+        cursor: pointer;
+        padding: 12px 22px 13px 18px;
+        border: none;
+        border: 2px solid $grey;
+        border-radius: 7px;
+        flex-wrap: wrap;
+
+        input {
+            display: none;
+        }
+    }
+}
+.form__checkboxes label.active{
+    border: 2px solid $blue;
+}
+.form__select {
+    padding: 10px 0px 10px 10px;
+    max-width: 369px;
+    width: 100%;
+    line-height: 34px;
+    border: 1px solid $grey;
+    border-radius: 7px;
+    margin-bottom: 18px;
+}
+
+.form__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    &-cheked {
+        position: relative;
+        padding-left: 27px;
+        font-size: 13px;
+        padding-left: 27px;
+
+        &::before {
+            content: '';
+            width: 15px;
+            height: 13px;
+            position: absolute;
+            background-image: url(../img/svg/ok.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &-time {
+        position: relative;
+        max-width: 210px;
+        width: 100%;
+        font-size: 13px;
+        padding-left: 27px;
+        &::before {
+            content: '';
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            background-image: url(../img/svg/delivery-time-tool.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            top: 5px;
+            left: 0;
+
+        }
+
+        .popup__info-link {
+            color: $blue;
+        }
+    }
+
+}
+
+.form__submit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .form__counter {
+        margin-right: 12px;
+        display: flex;
+        justify-content: space-between;
+        height: 50px;
+        max-width: 140px;
+        width: 100%;
+        border: 1px solid $grey;
+        border-radius: 7px;
+
+        input {
+            width: 53%;
+            text-align: center;
+            border: none;
+            font-weight: 700;
+
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            font-size: large;
+            // padding: 0;
+            color: $text;
+
+
+            &:first-child {
+                margin-left: 12px;
+            }
+
+            &:last-child {
+                margin-right: 12px;
+            }
+        }
+
+
+
+
+    }
+}
+
+.form__btnAdd {
+    cursor: pointer;
+    text-align: center;
+    max-width: 218px;
+    width: 100%;
+    height: 50px;
+    background-color: $blue;
+    color: #fff;
+    font-size: 15px;
+    border: none;
+    border-radius: 7px;
 }
