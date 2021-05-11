@@ -4,18 +4,51 @@
 
 
 
-
+body{
+    background: url(../img/bg.jpeg) no-repeat center center fixed;
+    background-size: cover;
+}
 .popup__btn {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 2px solid red;
-    padding: 15px 10px;
+    border: 2px solid #a23e1c;
+    padding:15px 30px;
     cursor: pointer;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    overflow: hidden;
+    font-family: 'montserrat';
+    font-weight: 500;
+    transition: all 0.8s;
+    background-color: #fec41b;
+    &::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 0%;
+        background-color: #a23e1c;
+        z-index: -1;
+        transition: all 0.8s;
+    }
+    
+}
 
-
-
+.popup__btn.btn {
+    color: #a23e1c;
+    &:hover{
+        color: #fec41b;
+    }
+    &::before{
+        bottom: 0;
+        border-radius: 50% 50% 0 0;
+    }
+    &:hover::before{
+        height: 180%;
+    }
 }
 
 
@@ -120,7 +153,11 @@
     opacity: 0.5;
 }
 
-
+.popup__price{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+}
 .form__label {
     display: inline-block;
     font-size: 12px;
@@ -146,9 +183,10 @@
         border-radius: 7px;
         flex-wrap: wrap;
 
-        input {
-            display: none;
-        }
+        
+    }
+    .inp{
+        display: none;
     }
 }
 .form__checkboxes label.active{
@@ -175,18 +213,18 @@
         padding-left: 27px;
         font-size: 13px;
         padding-left: 27px;
-
+        background-repeat: no-repeat;
+        
         &::before {
             content: '';
             width: 15px;
             height: 13px;
             position: absolute;
-            background-image: url(../img/svg/ok.svg);
             background-position: center;
-            background-repeat: no-repeat;
             background-size: cover;
             top: 0;
             left: 0;
+            background-image: url(../img/svg/redCross.svg);
         }
     }
 
@@ -370,7 +408,9 @@
     
     .popup__left{
         height: 220px;
+        
     }
+    
     .form__label{
         margin-bottom: 9px;
     }
