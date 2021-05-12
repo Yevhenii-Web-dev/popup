@@ -19,7 +19,7 @@
 //   console.log(response);
 // });
 
-fetch("./js/xbos.json")
+fetch("https://yevhenii-web-dev.github.io/popup/js/xbox.json")
   .then((response) => {
     return response.json();
   })
