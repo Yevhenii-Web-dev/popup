@@ -303,26 +303,47 @@ body{
 }
 
 .form__btnAdd {
+    position: relative;
+    overflow: hidden;
     cursor: pointer;
     text-align: center;
     max-width: 218px;
     width: 100%;
     height: 50px;
-    background-color: $blue;
-    color: #fff;
     font-size: 15px;
-    border: none;
+    border: 2px solid $blue;
+    background: none;
     border-radius: 7px;
+    transition: all 0.5s;
+    &::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 0%;
+        background: $blue;
+        z-index: -1;
+        transition: all 0.5s;
+    }
+    
+}
+.btn4{
+    color: #fff;
     &:hover{
-        color: #000;
+       color: $blue; 
     }
     
 }
 
+.btn4::before{
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+    height: 180%;
+}
 
-
-
-
+.btn4:hover::before{
+    height: 0%;
+}
 
 
 
