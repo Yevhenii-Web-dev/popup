@@ -19,7 +19,7 @@
 //   console.log(response);
 // });
 
-fetch("https://yevhenii-web-dev.github.io/popup/js/main.js")
+fetch("http://localhost:3000/js/xbos.json")
   .then((response) => {
     return response.json();
   })
