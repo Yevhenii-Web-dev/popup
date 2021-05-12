@@ -1,19 +1,25 @@
-const xhr = new XMLHttpRequest();
-xhr.open("GET", "https://github.com/Yevhenii-Web-dev/dataJson/blob/main/xbox.json")
-// xhr.header("Access-Control-Allow-Origin: http://localhost:3000/")
-xhr.addEventListener("load", () => {
-  xhr.responseText
-  console.log('request loaded');
-});
+// function getPosts(cb) {
+//   const xhr = new XMLHttpRequest();
+//   xhr.open("GET", "https://github.com/Yevhenii-Web-dev/popup/blob/main/xbox.json")
+//   // xhr.header("Access-Control-Allow-Origin: http://localhost:3000/")
+//   xhr.addEventListener("load", () => {
+//     const response = JSON.parse(xhr.responseText);
+//     cb(response);
+//   });
 
-xhr.addEventListener('error', () => {
-  console.log('error');
-});
+//   xhr.addEventListener('error', () => {
+//     console.log('error');
+//   });
 
-xhr.send();
+//   xhr.send();
+// }
 
 
+// getPosts(response => {
+//   console.log(response);
+// });
 
+fetch{""}
 
 let json = {
   "product": {
@@ -289,7 +295,7 @@ let inp = document.querySelector('.counter__result');
 btns.forEach(element => {
   element.addEventListener("click", function (e) {
     let rezalt = document.querySelector('input[name=ram]:checked').value;
-    
+
     if (rezalt == 'U' && number <= amountVersionOne) {
       infoChecked.innerHTML = 'Produkt dostępny';
 
@@ -315,12 +321,12 @@ btns.forEach(element => {
 
 // document.querySelector('.form__btnAdd').addEventListener('click', function(event){
 //   if (prompt("Prosze wpisać mail") != ''){
-    
+
 //   }else{
 //     alert("Nie jest podany meil")
 //     event.preventDefault();
 //   }
-  
+
 // })
 
 

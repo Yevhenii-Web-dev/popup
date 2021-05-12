@@ -42,7 +42,7 @@
                         <span id='btnClose' style="background-image: url(../img/svg/close.svg);"
                             class="popup__close"></span>
                         <div class="popup__title"></div>
-                        <form class="popup__form"
+                        <form id="popupMyForm" class="popup__form"
                             action="">
                             <label class="form__label">Rozmiar:</label>
                             <div class="form__checkboxes">
@@ -72,7 +72,7 @@
                             <div class="form__submit">
                                 <div class="form__counter">
                                     <button type="button" class="counter__btn" data-direction="minus">-</button>
-                                    <input id="" class="counter__result" type="text" value="0">
+                                    <input class="counter__result" type="text" value="0">
                                     <button type="button" class="counter__btn" data-direction="plus">+</button>
                                 </div>
                                 <button type="submit" class="form__btnAdd">Dodaj do koszyka</button>
