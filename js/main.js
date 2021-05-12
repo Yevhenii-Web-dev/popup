@@ -19,7 +19,7 @@
 //   console.log(response);
 // });
 
-fetch("https://yevhenii-web-dev.github.io/popup/js/xbos.json")
+fetch("./js/xbos.json")
   .then((response) => {
     return response.json();
   })
@@ -28,7 +28,7 @@ fetch("https://yevhenii-web-dev.github.io/popup/js/xbos.json")
 
 
 
-      // popup__title
+    // popup__title
     let nameProduct = json.product.name;
     document.querySelector('.popup__title').innerHTML = nameProduct;
 
@@ -210,7 +210,7 @@ fetch("https://yevhenii-web-dev.github.io/popup/js/xbos.json")
 
 
 
-    document.querySelector('.form__btnAdd').addEventListener('click', function(event){
+    document.querySelector('.form__btnAdd').addEventListener('click', function (event) {
       alert('Wybrane opce')
       // if (prompt("Prosze wpisać mail") != ''){
 
