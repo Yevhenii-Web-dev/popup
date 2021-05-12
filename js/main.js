@@ -47,7 +47,12 @@ fetch("https://yevhenii-web-dev.github.io/popup/js/xbox.json")
 
 
 
-
+    //1
+    let amountVersionOne = json.sizes.items.U.amount;
+    //12
+    let amountVersionTwo = json.sizes.items.V.amount;
+    //0
+    let amountVersionThree = json.sizes.items.W.amount;
 
 
 
@@ -62,10 +67,6 @@ fetch("https://yevhenii-web-dev.github.io/popup/js/xbox.json")
 
     let colorVersionThree = json.multiversions[0].items['1-3'].values['59'].name;
     document.querySelector('.select__three').innerHTML = colorVersionThree;
-
-
-
-
 
 
 
@@ -105,38 +106,9 @@ fetch("https://yevhenii-web-dev.github.io/popup/js/xbox.json")
 
     });
 
-    //1
-    let amountVersionOne = json.sizes.items.U.amount;
-    //12
-    let amountVersionTwo = json.sizes.items.V.amount;
-    //0
-    let amountVersionThree = json.sizes.items.W.amount;
-
-    // counter
-    const btns = document.querySelectorAll('.counter__btn');
-    let order = '';
-    let number;
-
-    btns.forEach(btn => {
-      btn.addEventListener('click', function () {
-        const direction = this.dataset.direction;
-        let inp = this.parentElement.querySelector('.counter__result');
-        const currentValue = +inp.value;
-        let newValue;
-        if (direction === "plus") {
-          newValue = currentValue + 1;
-        }
-        else {
-          newValue = currentValue - 1 > 0 ?
-            currentValue - 1 : 0;
-        }
-        inp.value = newValue;
-        number = newValue;
 
 
-      });
 
-    });
 
 
 
@@ -181,6 +153,32 @@ fetch("https://yevhenii-web-dev.github.io/popup/js/xbox.json")
 
 
 
+    // counter
+    const btns = document.querySelectorAll('.counter__btn');
+    let number;
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', function () {
+        const direction = this.dataset.direction;
+        let inp = this.parentElement.querySelector('.counter__result');
+        const currentValue = +inp.value;
+        let newValue;
+        if (direction === "plus") {
+          newValue = currentValue + 1;
+        }
+        else {
+          newValue = currentValue - 1 > 0 ?
+            currentValue - 1 : 0;
+        }
+        inp.value = newValue;
+        number = newValue;
+
+
+      });
+
+    });
+
+
 
     let inp = document.querySelector('.counter__result');
     btns.forEach(element => {
@@ -209,24 +207,6 @@ fetch("https://yevhenii-web-dev.github.io/popup/js/xbox.json")
 
 
 
-
-    document.querySelector('.form__btnAdd').addEventListener('click', function (event) {
-      alert('Wybrane opce')
-      // if (prompt("Prosze wpisać mail") != ''){
-
-      // }else{
-      //   alert("Nie jest podany meil")
-      //   event.preventDefault();
-      // }
-
-    })
-
-
-
-
-
-
-
     // add class active
     let lebels = document.querySelectorAll('.checkboxes__label')
     lebels.forEach(button => {
@@ -234,7 +214,7 @@ fetch("https://yevhenii-web-dev.github.io/popup/js/xbox.json")
         lebels.forEach(btn => btn.classList.remove('active'));
         this.classList.add('active');
       })
-    })
+    });
 
 
 
@@ -242,12 +222,31 @@ fetch("https://yevhenii-web-dev.github.io/popup/js/xbox.json")
     let itemColor = document.querySelector('.form__select')
     itemColor.onchange = function () {
       document.querySelector('.slick-next').click()
-    }
-
-
+    };
 
 
 
 
   });
 
+
+
+
+
+// function (sendEmail(){
+//   var i1 = $("#i1");
+//   var i2 = $("#i2");
+//   var i3 = $("#i3");
+//   var rezultSelect = $(#rezultSelect)
+
+// })
+  // document.querySelector('.form__btnAdd').addEventListener('click', function (event) {
+  //   //   alert('Wybrane opce')
+  //   //   // if (prompt("Prosze wpisać mail") != ''){
+
+  //   //   // }else{
+  //   //   //   alert("Nie jest podany meil")
+  //   //   //   event.preventDefault();
+  //   //   // }
+
+  //   // })

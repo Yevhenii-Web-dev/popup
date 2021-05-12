@@ -42,25 +42,24 @@
                         <span id='btnClose' style="background-image: url(./img/svg/close.svg);"
                             class="popup__close"></span>
                         <div class="popup__title"></div>
-                        <form class="popup__form"
-                            action="">
+                        <form id="form" class="popup__form">
                             <label class="form__label">Rozmiar:</label>
                             <div class="form__checkboxes">
-                                <label for="i-1" class="checkboxes__label one active"></label>
-                                <input id="i-1" class="inp" type="radio" name="ram" value="U" checked>
+                                <label for="i1" class="checkboxes__label one active"></label>
+                                <input id="i1" class="inp" type="radio" name="ram" value="U" checked>
 
-                                <label for="i-2" class="checkboxes__label two"></label>
-                                <input id="i-2" class="inp" type="radio" name="ram" value="V" >
+                                <label for="i2" class="checkboxes__label two"></label>
+                                <input id="i2" class="inp" type="radio" name="ram" value="V" >
 
-                                <label for="i-3" class="checkboxes__label three"></label>
-                                <input id="i-3" class="inp" type="radio" name="ram" value="W">
+                                <label for="i3" class="checkboxes__label three"></label>
+                                <input id="i3" class="inp" type="radio" name="ram" value="W">
                             </div>
                             <label class="select__label">Wariant:</label>
-                            <select class="form__select" name="color">
+                            <select id="rezultSelect" class="form__select" name="color">
                                 
                                 <!-- <option class="select__one" value="0"></option> -->
-                                <option class="select__two" value="1"></option>
-                                <option class="select__three" value="2" selected></option>
+                                <option label="white" class="select__two" value="1"></option>
+                                <option label="bleak" class="select__three" value="2" selected></option>
                                 
                             </select>
                             <div class="form__info">
@@ -72,10 +71,10 @@
                             <div class="form__submit">
                                 <div class="form__counter">
                                     <button type="button" class="counter__btn" data-direction="minus">-</button>
-                                    <input id="" class="counter__result" type="text" value="0">
+                                    <input id="rezultCounter" class="counter__result" type="text" value="0">
                                     <button type="button" class="counter__btn" data-direction="plus">+</button>
                                 </div>
-                                <button type="submit" class="form__btnAdd btn4">Dodaj do koszyka</button>
+                                <button onclick="sendEmail()" type="submit" value="Send an Email" class="form__btnAdd btn4">Dodaj do koszyka</button>
                             </div>
 
                         </form>
