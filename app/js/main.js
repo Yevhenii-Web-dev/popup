@@ -1,5 +1,19 @@
 const xhr = new XMLHttpRequest();
-xhr.open("GET", "")
+xhr.open("GET", "https://github.com/Yevhenii-Web-dev/dataJson/blob/main/xbox.json")
+// xhr.header("Access-Control-Allow-Origin: http://localhost:3000/")
+xhr.addEventListener("load", () => {
+  xhr.responseText
+  console.log('request loaded');
+});
+
+xhr.addEventListener('error', () => {
+  console.log('error');
+});
+
+xhr.send();
+
+
+
 
 let json = {
   "product": {
