@@ -8,13 +8,13 @@ let gulp = require('gulp'),
     cssmin = require('gulp-cssmin');
 
 gulp.task('sass', function(){
-   return gulp.src('/scss/style.scss')
+   return gulp.src('./scss/style.scss')
             .pipe(sass({outputStyle: 'compressed'}))
             .pipe(rename({suffix: ".min"}))
             .pipe(autoprefixer({
                 overrideBrowserslist: ['last 8 versions']
             }))
-            .pipe(gulp.dest('/css'))
+            .pipe(gulp.dest('./css'))
             .pipe(browserSync.reload({stream:true}))
 });
 
@@ -27,7 +27,7 @@ gulp.task('style', function() {
     ])
     .pipe(concat('libs.min.css'))
     .pipe(cssmin())
-    .pipe(gulp.dest('/css'))
+    .pipe(gulp.dest('./css'))
 });
 
 gulp.task('script', function() {
@@ -37,16 +37,16 @@ gulp.task('script', function() {
     ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('/js'))
+    .pipe(gulp.dest('./js'))
 });
 
 gulp.task('html', function(){
-    return gulp.src('/*.html')
+    return gulp.src('./*.html')
     .pipe(browserSync.reload({stream:true}))
 });
 
 gulp.task('js', function(){
-    return gulp.src('/js/*.js')
+    return gulp.src('./js/*.js')
     .pipe(browserSync.reload({stream:true}))
 });
 
@@ -59,9 +59,9 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('watch', function(){
-    gulp.watch('/scss/style.scss', gulp.parallel('sass'))
-    gulp.watch('/*.html', gulp.parallel('html'))
-    gulp.watch('/js/*.js', gulp.parallel('js'))
+    gulp.watch('./scss/style.scss', gulp.parallel('sass'))
+    gulp.watch('./*.html', gulp.parallel('html'))
+    gulp.watch('./js/*.js', gulp.parallel('js'))
 });
 
 gulp.task('default', gulp.parallel('style', 'script', 'sass', 'watch', 'browser-sync',))
