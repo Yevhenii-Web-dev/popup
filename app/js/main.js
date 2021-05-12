@@ -1,12 +1,5 @@
-// $document.ready(function(){
-//   $.getJSON('xbox.json', function(data){
-//     let json = '';
-//     $.each(data, function(key, value){
-
-//     });
-//     $('#json').append()
-//   });
-// });
+const xhr = new XMLHttpRequest();
+xhr.open("GET", "")
 
 let json = {
   "product": {
@@ -211,7 +204,8 @@ let amountVersionThree = json.sizes.items.W.amount;
 // counter
 const btns = document.querySelectorAll('.counter__btn');
 let order = '';
-console.log(order);
+let number;
+
 btns.forEach(btn => {
   btn.addEventListener('click', function () {
     const direction = this.dataset.direction;
@@ -226,23 +220,8 @@ btns.forEach(btn => {
         currentValue - 1 : 0;
     }
     inp.value = newValue;
-    console.log(newValue);
+    number = newValue;
 
-
-    if (newValue <= amountVersionOne){
-      order += newValue;
-        
-    }else if(newValue <= amountVersionTwo){
-      order += newValue;
-      
-    }else if(newValue <= amountVersionThree){
-      order += newValue;
-    }
-    else{
-      inp.value = 0
-      alert('wiencej nie ma')
-      
-    }
 
   });
 
@@ -256,33 +235,83 @@ btns.forEach(btn => {
 
 // radio btn
 let infoChecked = document.querySelector('.form__info-cheked');
-
+let icoImg = document.querySelector('.form__info-cheked')
 var radios = document.getElementsByName('ram');
-// let order = '';
 for (let i = 0; i < radios.length; i++) {
   radios[i].addEventListener('click', () => {
     let rezalt = document.querySelector('input[name=ram]:checked').value;
 
     if (rezalt == 'U' && amountVersionOne != 0) {
-      infoChecked.innerHTML = 'Produkt dostępny'
+      infoChecked.innerHTML = 'Produkt dostępny';
+      icoImg.style.backgroundImage = "url(../img/svg/ok.svg)"
+
     }
     else if (rezalt == 'V' && amountVersionTwo != 0) {
-      infoChecked.innerHTML = 'Produkt dostępny'
+      infoChecked.innerHTML = 'Produkt dostępny';
+      icoImg.style.backgroundImage = "url(../img/svg/ok.svg)"
     }
     else if (rezalt == 'W' && amountVersionThree != 0) {
-      infoChecked.innerHTML = 'Produkt dostępny'
-    }
-  
-    else {
-      
-      infoChecked.innerHTML = 'Produkt niedostępny'   
-      alert('Niema na magazynie')
+      infoChecked.innerHTML = 'Produkt dostępny';
+      icoImg.style.backgroundImage = "url(../img/svg/ok.svg)"
     }
 
-    
+    else {
+
+      infoChecked.innerHTML = 'Produkt niedostępny';
+      icoImg.style.backgroundImage = "url(../img/svg/m_close.svg)"
+      alert('Niema na magazynie');
+    }
+
+
   });
 
 };
+
+
+
+
+
+let inp = document.querySelector('.counter__result');
+btns.forEach(element => {
+  element.addEventListener("click", function (e) {
+    let rezalt = document.querySelector('input[name=ram]:checked').value;
+    
+    if (rezalt == 'U' && number <= amountVersionOne) {
+      infoChecked.innerHTML = 'Produkt dostępny';
+
+    } else if (rezalt == 'V' && number <= amountVersionTwo) {
+      infoChecked.innerHTML = 'Produkt dostępny';
+
+    } else if (rezalt == 'W' && number <= amountVersionThree) {
+      infoChecked.innerHTML = 'Produkt dostępny';
+
+    } else {
+
+      alert('Wiencej zapasuw niema');
+      inp.value = 0;
+
+    }
+
+  });
+});
+
+
+
+
+
+// document.querySelector('.form__btnAdd').addEventListener('click', function(event){
+//   if (prompt("Prosze wpisać mail") != ''){
+    
+//   }else{
+//     alert("Nie jest podany meil")
+//     event.preventDefault();
+//   }
+  
+// })
+
+
+
+
 
 
 

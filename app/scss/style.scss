@@ -209,23 +209,23 @@ body{
     margin-bottom: 20px;
 
     &-cheked {
-        position: relative;
+        
         padding-left: 27px;
         font-size: 13px;
         padding-left: 27px;
         background-repeat: no-repeat;
-        
-        &::before {
-            content: '';
-            width: 15px;
-            height: 13px;
-            position: absolute;
-            background-position: center;
-            background-size: cover;
-            top: 0;
-            left: 0;
-            background-image: url(../img/svg/redCross.svg);
-        }
+        background-image: url(../img/svg/ok.svg);
+        // &::before {
+        //     content: '';
+        //     width: 15px;
+        //     height: 13px;
+        //     position: absolute;
+        //     background-position: center;
+        //     background-size: cover;
+        //     top: 0;
+        //     left: 0;
+        //     background-image: url(../img/svg/ok.svg);
+        // }
     }
 
     &-time {
@@ -313,6 +313,10 @@ body{
     font-size: 15px;
     border: none;
     border-radius: 7px;
+    &:hover{
+        color: #000;
+    }
+    
 }
 
 
@@ -416,19 +420,5 @@ body{
     }
 }
 
-// @media (max-wight: 737px) and (max-height: 415px) {
-//     .popup__content{
-//         height: 335px;
-//         flex-direction: row;
-//     }
-//     .popup__right{
-        
-        
-//     }
-// }
-// @media (min-height: 375px) {
-//     .popup__body{
-//         padding: 0;
-//     }
-// }
+
 
