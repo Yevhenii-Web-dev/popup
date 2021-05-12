@@ -1,6 +1,6 @@
 // function getPosts(cb) {
 //   const xhr = new XMLHttpRequest();
-//   xhr.open("GET", "https://github.com/Yevhenii-Web-dev/popup/blob/main/xbox.json")
+//   xhr.open("GET", "https://yevhenii-web-dev.github.io/popup/js/xbos.json")
 //   // xhr.header("Access-Control-Allow-Origin: http://localhost:3000/")
 //   xhr.addEventListener("load", () => {
 //     const response = JSON.parse(xhr.responseText);
