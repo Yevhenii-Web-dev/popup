@@ -1,6 +1,7 @@
 @import "vars";
 @import "global";
 @import "fonts";
+@import "media";
 
 
 
@@ -354,92 +355,7 @@ body{
 
 
 
-// media start
 
-@media (max-width: 745px) {
-    .popup__content{
-        flex-direction: column;
-        height: auto;
-    }
-    .popup__right{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .form__checkboxes{
-        display: flex;
-        
-    }
-    .form__info{
-        justify-content: flex-start;
-    }
-    .form__info-cheked{
-        margin-right: 24px;
-    }
-    .form__submit{
-        justify-content: flex-start;
-    }
-    .select__label{
-        display: block;
-    }
-}
-
-@media (max-width: 460px) {
-    .popup__right{
-        display: block;
-    }
-    .form__submit{
-        justify-content: space-between;
-    }
-    .form__info{
-        justify-content: space-between;
-    }
-    .form__info-cheked{
-        margin-right: 0px;
-    }
-}
-
-@media (max-width: 440px) {
-    .form__checkboxes label{
-        margin-right: 5px;
-        padding: 12px;
-    }
-    .popup__title{
-        margin-bottom: 18px;
-    }
-    .popup__body{
-        padding: 0;
-    }
-
-}
-
-@media (max-width: 363px) {
-    .form__checkboxes label{
-        font-size: 11px;
-        padding: 9px;
-        margin-right: 6px;
-    }
-    .form__btnAdd{
-        font-size: 13px;
-    }
-    .form__info-time{
-        padding-left: 25px;
-        font-size: 11px;
-    }
-    .form__info-cheked{
-        font-size: 11px;
-    }
-    
-    .popup__left{
-        height: 220px;
-        
-    }
-    
-    .form__label{
-        margin-bottom: 9px;
-    }
-}
 
 
 
