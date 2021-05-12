@@ -1,24 +1,3 @@
-// function getPosts(cb) {
-//   const xhr = new XMLHttpRequest();
-//   xhr.open("GET", "https://yevhenii-web-dev.github.io/popup/js/xbos.json")
-//   // xhr.header("Access-Control-Allow-Origin: http://localhost:3000/")
-//   xhr.addEventListener("load", () => {
-//     const response = JSON.parse(xhr.responseText);
-//     cb(response);
-//   });
-
-//   xhr.addEventListener('error', () => {
-//     console.log('error');
-//   });
-
-//   xhr.send();
-// }
-
-
-// getPosts(response => {
-//   console.log(response);
-// });
-
 fetch("https://yevhenii-web-dev.github.io/popup/js/xbox.json")
   .then((response) => {
     return response.json();
@@ -179,7 +158,7 @@ fetch("https://yevhenii-web-dev.github.io/popup/js/xbox.json")
     });
 
 
-
+     // audit counter
     let inp = document.querySelector('.counter__result');
     btns.forEach(element => {
       element.addEventListener("click", function (e) {
@@ -232,21 +211,31 @@ fetch("https://yevhenii-web-dev.github.io/popup/js/xbox.json")
 
 
 
+// email submit
+function sendEmail() {
+  var i1 = $("#i1");
+  var i2 = $("#i2");
+  var i3 = $("#i3");
+  var rezultSelect = $("#rezultSelect");
+  var rezultCounter = $("#rezultCounter");
+  var body = $("#body");
 
-// function (sendEmail(){
-//   var i1 = $("#i1");
-//   var i2 = $("#i2");
-//   var i3 = $("#i3");
-//   var rezultSelect = $(#rezultSelect)
+  if (isNotEmpty(i1) && isNotEmpty(i2) && isNotEmpty(i3) && isNotEmpty(rezultSelect) && isNotEmpty(rezultCounter) && isNotEmpty(body)) {
+    $.ajax({
+      url: 'sendEmail.php',
+      method: 'POST',
+      dataType: 'json',
+      data: {
+        i1: i1.val(),
+        i2: i2.val(),
+        i3: i3.val(),
+        rezultSelect: rezultSelect.val(),
+        rezultCounter: rezultCounter.val(),
+        body: body.val()
+      }, success: function (response) {
+        $('#form')[0].reset();
+      }
+    });
+  }
+}
 
-// })
-  // document.querySelector('.form__btnAdd').addEventListener('click', function (event) {
-  //   //   alert('Wybrane opce')
-  //   //   // if (prompt("Prosze wpisać mail") != ''){
-
-  //   //   // }else{
-  //   //   //   alert("Nie jest podany meil")
-  //   //   //   event.preventDefault();
-  //   //   // }
-
-  //   // })
