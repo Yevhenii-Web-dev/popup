@@ -1,21 +1,22 @@
 @import "vars";
 @import "global";
 @import "fonts";
-@import "media";
 
 
 
-body{
+
+body {
     background: url(../img/bg.jpeg) no-repeat center center fixed;
     background-size: cover;
 }
+
 .popup__btn {
     position: absolute;
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     border: 2px solid #a23e1c;
-    padding:15px 30px;
+    padding: 15px 30px;
     cursor: pointer;
     font-size: 20px;
     text-transform: uppercase;
@@ -25,7 +26,8 @@ body{
     font-weight: 500;
     transition: all 0.8s;
     background-color: #fec41b;
-    &::before{
+
+    &::before {
         content: '';
         position: absolute;
         left: 0;
@@ -35,19 +37,22 @@ body{
         z-index: -1;
         transition: all 0.8s;
     }
-    
+
 }
 
 .popup__btn.btn {
     color: #a23e1c;
-    &:hover{
+
+    &:hover {
         color: #fec41b;
     }
-    &::before{
+
+    &::before {
         bottom: 0;
         border-radius: 50% 50% 0 0;
     }
-    &:hover::before{
+
+    &:hover::before {
         height: 180%;
     }
 }
@@ -87,7 +92,7 @@ body{
         transition: all 0.5s ease 0s;
         opacity: 0;
         transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
-        
+
     }
 
     &__close {
@@ -102,7 +107,7 @@ body{
         cursor: pointer;
 
     }
-    
+
 
     &__title {
         max-width: 337px;
@@ -115,24 +120,28 @@ body{
 }
 
 
-.popup__left{
+.popup__left {
     width: 230px;
     height: auto;
     max-width: 100%;
     margin: 0 auto;
 
 }
-.left__slider{
+
+.left__slider {
     margin-top: 20px;
 
 }
-.slick__list{
+
+.slick__list {
     overflow: hidden;
 }
-.slick__track{
+
+.slick__track {
     display: flex;
     align-items: flex-start;
 }
+
 .slick-next:before {
     background-image: url(../img/svg/right-arrow.svg);
     background-position: center;
@@ -143,7 +152,8 @@ body{
     color: transparent;
     opacity: 0.5;
 }
-.slick-prev:before{
+
+.slick-prev:before {
     background-image: url(../img/svg/left-arrow.svg);
     background-position: center;
     background-repeat: no-repeat;
@@ -154,11 +164,12 @@ body{
     opacity: 0.5;
 }
 
-.popup__price{
+.popup__price {
     text-align: center;
     font-size: 16px;
     font-weight: 700;
 }
+
 .form__label {
     display: inline-block;
     font-size: 12px;
@@ -184,15 +195,18 @@ body{
         border-radius: 7px;
         flex-wrap: wrap;
 
-        
+
     }
-    .inp{
+
+    .inp {
         display: none;
     }
 }
-.form__checkboxes label.active{
+
+.form__checkboxes label.active {
     border: 2px solid $blue;
 }
+
 .form__select {
     padding: 10px 0px 10px 10px;
     max-width: 369px;
@@ -210,7 +224,7 @@ body{
     margin-bottom: 20px;
 
     &-cheked {
-        
+
         padding-left: 27px;
         font-size: 13px;
         padding-left: 27px;
@@ -235,6 +249,7 @@ body{
         width: 100%;
         font-size: 13px;
         padding-left: 27px;
+
         &::before {
             content: '';
             width: 16px;
@@ -316,7 +331,8 @@ body{
     background: none;
     border-radius: 7px;
     transition: all 0.5s;
-    &::before{
+
+    &::before {
         content: '';
         position: absolute;
         left: 0;
@@ -326,23 +342,25 @@ body{
         z-index: -1;
         transition: all 0.5s;
     }
-    
-}
-.btn4{
-    color: #fff;
-    &:hover{
-       color: $blue; 
-    }
-    
+
 }
 
-.btn4::before{
+.btn4 {
+    color: #fff;
+
+    &:hover {
+        color: $blue;
+    }
+
+}
+
+.btn4::before {
     bottom: 0;
     border-radius: 50% 50% 0 0;
     height: 180%;
 }
 
-.btn4:hover::before{
+.btn4:hover::before {
     height: 0%;
 }
 
@@ -355,90 +373,106 @@ body{
 
 
 @media (max-width: 745px) {
-    .popup__content{
+    .popup__content {
         flex-direction: column;
         height: auto;
     }
-    .popup__right{
+
+    .popup__right {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-    .form__checkboxes{
+
+    .form__checkboxes {
         display: flex;
-        
+
     }
-    .form__info{
+
+    .form__info {
         justify-content: flex-start;
     }
-    .form__info-cheked{
+
+    .form__info-cheked {
         margin-right: 24px;
     }
-    .form__submit{
+
+    .form__submit {
         justify-content: flex-start;
     }
-    .select__label{
+
+    .select__label {
         display: block;
     }
 }
 
 @media (max-width: 460px) {
-    .popup__right{
+    .popup__right {
         display: block;
     }
-    .form__submit{
+
+    .form__submit {
         justify-content: space-between;
     }
-    .form__info{
+
+    .form__info {
         justify-content: space-between;
     }
-    .form__info-cheked{
+
+    .form__info-cheked {
         margin-right: 0px;
     }
 }
 
 @media (max-width: 440px) {
-    .form__checkboxes label{
+    .form__checkboxes label {
         margin-right: 5px;
         padding: 12px;
     }
-    .popup__title{
+
+    .popup__title {
         margin-bottom: 18px;
     }
-    .popup__body{
+
+    .popup__body {
         padding: 0;
     }
 
 }
 
 @media (max-width: 363px) {
-    .form__checkboxes label{
+    .form__checkboxes label {
         font-size: 11px;
         padding: 9px;
         margin-right: 6px;
     }
-    .form__btnAdd{
+
+    .form__btnAdd {
         font-size: 13px;
     }
-    .form__info-time{
+
+    .form__info-time {
         padding-left: 25px;
         font-size: 11px;
     }
-    .form__info-cheked{
+
+    .form__info-cheked {
         font-size: 11px;
     }
-    
-    .popup__left{
+
+    .popup__left {
         height: 220px;
-        
+
     }
-    
-    .form__label{
+
+    .form__label {
         margin-bottom: 9px;
     }
 }
 
+.btnC {
+    opacity: 0;
+    font-size: 0;
 
-
-
+}

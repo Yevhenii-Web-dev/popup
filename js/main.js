@@ -38,8 +38,8 @@ fetch("https://yevhenii-web-dev.github.io/popup/js/xbox.json")
 
     // checkboxes__label color
 
-    // let colorVersionOne = json.multiversions[0].items['1-1'].values['61'].name;
-    // document.querySelector('.select__one').innerHTML = colorVersionOne;
+    let colorVersionOne = json.multiversions[0].items['1-1'].values['61'].name;
+    document.querySelector('.select__one').innerHTML = colorVersionOne;
 
     let colorVersionTwo = json.multiversions[0].items['1-2'].values['60'].name;
     document.querySelector('.select__two').innerHTML = colorVersionTwo;
@@ -158,7 +158,7 @@ fetch("https://yevhenii-web-dev.github.io/popup/js/xbox.json")
     });
 
 
-     // audit counter
+    // audit counter
     let inp = document.querySelector('.counter__result');
     btns.forEach(element => {
       element.addEventListener("click", function (e) {
@@ -197,13 +197,35 @@ fetch("https://yevhenii-web-dev.github.io/popup/js/xbox.json")
 
 
 
-    // selected, change img
-    let itemColor = document.querySelector('.form__select')
-    itemColor.onchange = function () {
-      document.querySelector('.slick-next').click()
-    };
 
 
+
+
+
+    // photo change
+    $('.btnC').click(function (e) {
+      e.preventDefault();
+      var slideno = $(this).data('slide');
+      $('.left__slider').slick('slickGoTo', slideno - 1);
+    });
+
+
+    var select = document.querySelector('.form__select');
+    select.addEventListener('change', () => {
+      if (select.value == document.querySelector('button[data-slide="0"]').dataset.slide) {
+        console.log('grey');
+        document.querySelector('button[data-slide="0"]').click();
+      } else if (select.value == document.querySelector('button[data-slide="1"]').dataset.slide) {
+        console.log('bleak');
+        document.querySelector('button[data-slide="1"]').click();
+      } else if (select.value == document.querySelector('button[data-slide="2"]').dataset.slide) {
+        console.log('white');
+        document.querySelector('button[data-slide="2"]').click();
+      }else{
+        console.log('error');
+      }
+      console.log(select.value);
+    });
 
 
   });
